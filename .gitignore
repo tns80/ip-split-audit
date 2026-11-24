@@ -1,0 +1,14 @@
+# Local cache & personal reports (NEVER commit user's real IPs!)
+data/
+report.html
+*.json
+
+# Python cache
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
