@@ -1,16 +1,17 @@
 @echo off
 chcp 65001 >nul
-title IP Split Audit - 代理分流一键体检工具
+set PYTHONUTF8=1
+title IP Split Audit
 
 where python >nul 2>nul
 if %errorlevel% neq 0 (
-    echo [错误] 未检测到 Python，请先安装 Python 3.8+ (https://www.python.org/downloads/)
-    echo 安装时请勾选 "Add Python to PATH"
+    echo [ERROR] Python 3.8+ not found. Please install from https://www.python.org/downloads/
+    echo Make sure to check "Add Python to PATH" during installation.
     pause
     exit /b 1
 )
 
-echo 正在启动代理分流一键体检，完成后将自动打开网页版可视化报告...
+echo Starting IP Split Audit...
 echo.
 python "%~dp0ip_split_audit.py" --open %*
 echo.
